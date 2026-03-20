@@ -30,14 +30,21 @@ export default function Layout() {
       <aside className="hidden lg:flex flex-col w-64 bg-cosmos/90 border-r border-ion/10 backdrop-blur-xl fixed h-full z-40">
         {/* Logo */}
         <div className="p-6 border-b border-ion/10">
-          <div className="flex flex-col items-start gap-2">
-            <img
-              src="/ieee-epi-logo.png"
-              alt="IEEE EPI Student Branch"
-              className="h-10 w-auto object-contain"
-              style={{ filter: 'brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(180deg) brightness(1.4)' }}
-            />
-            <div className="font-mono-tech text-ghost text-xs tracking-widest">CHALLENGE ARENA</div>
+          <div className="flex items-center gap-3">
+            <div className="relative w-10 h-10">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                className="absolute inset-0 rounded-full border border-ion/40 border-t-ion"
+              />
+              <div className="absolute inset-1 rounded-full bg-ion/10 flex items-center justify-center">
+                <span className="font-display text-ion text-xs font-bold">IE</span>
+              </div>
+            </div>
+            <div>
+              <div className="font-display text-sm text-gradient-ion">IEEE EPI</div>
+              <div className="font-mono-tech text-ghost text-xs">CHALLENGE ARENA</div>
+            </div>
           </div>
         </div>
 
@@ -95,12 +102,10 @@ export default function Layout() {
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-cosmos/95 border-b border-ion/10 backdrop-blur-xl">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            <img
-              src="/ieee-epi-logo.png"
-              alt="IEEE EPI Student Branch"
-              className="h-7 w-auto object-contain"
-              style={{ filter: 'brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(180deg) brightness(1.4)' }}
-            />
+            <div className="w-7 h-7 rounded-full bg-ion/20 border border-ion/40 flex items-center justify-center">
+              <span className="font-display text-ion text-xs">IE</span>
+            </div>
+            <span className="font-display text-sm text-gradient-ion">IEEE EPI</span>
           </div>
           <div className="flex items-center gap-3">
             <span className="font-mono-tech text-star text-xs">{userProfile?.totalPoints || 0} PTS</span>
